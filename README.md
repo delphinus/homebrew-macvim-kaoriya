@@ -9,4 +9,4 @@ $ brew cask install macvim-kaoriya
 
 This cask existed in official repo caskroom/homebrew-versions.
 
-ref: caskroom/homebrew-versions#3223
+ref: [caskroom/homebrew-versions#3223](https://github.com/caskroom/homebrew-versions#3223)
