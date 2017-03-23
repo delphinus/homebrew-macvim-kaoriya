@@ -5,3 +5,8 @@ This cask will install [macvim-kaoriya](https://github.com/splhack/macvim-kaoriy
 ```sh
 $ brew tap delphinus/macvim-kaoriya
 $ brew cask install macvim-kaoriya
+```
+
+This cask existed in official repo caskroom/homebrew-versions.
+
+ref: caskroom/homebrew-versions#3223
