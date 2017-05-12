@@ -22,14 +22,6 @@ cask 'macvim-kaoriya' do
   executables += %w[vi vim vimdiff view vimex] if ARGV.include? '--override-system-vim'
   executables.each { |e| binary mvim, target: e }
 
-  postflight do
-    system 'ruby',
-           '-i.bak',
-           '-pe',
-           %q[sub %r[`dirname "\$0"`(?=(?:/\.\.){3})], '$(cd $(dirname $(readlink $0 || echo $0));pwd)'],
-           staged_path.join(mvim)
-  end
-
   zap delete: [
                 '~/Library/Preferences/org.vim.MacVim.LSSharedFileList.plist',
                 '~/Library/Preferences/org.vim.MacVim.plist',
