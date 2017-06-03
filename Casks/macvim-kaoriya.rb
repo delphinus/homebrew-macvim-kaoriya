@@ -19,7 +19,7 @@ cask 'macvim-kaoriya' do
 
   mvim = "#{appdir}/MacVim.app/Contents/bin/mvim"
   executables = %w[macvim-askpass mvim mvimdiff mview mvimex gvim gvimdiff gview gvimex]
-  executables += %w[vi vim vimdiff view vimex] if ARGV.include? '--override-system-vim'
+  executables += %w[vi vim vimdiff view vimex] if ENV['OVERRIDE_SYSTEM_VIM']
   executables.each { |e| binary mvim, target: e }
 
   zap delete: [
@@ -40,9 +40,12 @@ cask 'macvim-kaoriya' do
         macvim-askpass / mvim / mvimdiff / mview / mvimex /
         gvim / gvimdiff / gview / gvimex
 
-      With --override-system-vim option, you can have more symlinks to use
-      macvim-kaoriya instead of the system vim.
+      With OVERRIDE_SYSTEM_VIM=1 environmental variable, you can have more
+      symlinks to use macvim-kaoriya instead of the system vim.
         vi / vim / vimdiff / view / vimex
+
+      Note: in previous version, it was `--override-system-vim` option to do
+      this.
     EOS
   end
 end
