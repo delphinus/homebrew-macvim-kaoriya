@@ -3,13 +3,13 @@ cask 'macvim-kaoriya' do
     version '7.4:20130911'
     sha256 'd9fc6e38de1852e4ef79e9ea78afa60e606bf45066cff031e349d65748cbfbce'
   else
-    version '8.0:20170512'
-    sha256 'fa17a4cb328c620292e56888288e32891127fe2b3168a1ef1ab7e85e093006a9'
+    version '8.0:20170724'
+    sha256 '4684615a3b44f75dc6d6dd73efa32fa9fe91ea089029f792272685f29997d901'
   end
 
   url "https://github.com/splhack/macvim-kaoriya/releases/download/#{version.after_colon}/MacVim-KaoriYa-#{version.after_colon}.dmg"
   appcast 'https://github.com/splhack/macvim-kaoriya/releases.atom',
-          checkpoint: '315a1b272d46983c21d0c63ac33ec308b9986b634f6283b603dfc22e4782365b'
+          checkpoint: '1345c8ae8e9e5bc7e6336463e7a9e19638524a1afc9c7a737d39517c36b519a8'
   name 'MacVim KaoriYa'
   homepage 'https://github.com/splhack/macvim-kaoriya'
 
