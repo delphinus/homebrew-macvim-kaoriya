@@ -5,6 +5,9 @@ This cask will install [macvim-kaoriya](https://github.com/splhack/macvim-kaoriy
 ```sh
 $ brew tap delphinus/macvim-kaoriya
 $ brew cask install macvim-kaoriya
+
+# If you want to override the system Vim, use this instead.
+$ brew cask install macvim-kaoriya-override
 ```
 
 This cask existed in official repo caskroom/homebrew-versions.
