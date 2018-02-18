@@ -29,7 +29,7 @@ cask 'macvim-kaoriya' do
 
   caveats do
     files_in_usr_local
-    <<-EOS.undent
+    <<~EOS
       Note that homebrew also provides a compiled macvim Formula that links its
       binary to /usr/local/bin/mvim. And the Cask MacVim also does. It's not
       recommended to install both the Cask MacVim KaoriYa and the Cask MacVim
