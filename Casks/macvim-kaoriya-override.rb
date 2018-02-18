@@ -1,5 +1,5 @@
-cask 'macvim-kaoriya' do
-  conflicts_with cask: 'macvim-kaoriya-override'
+cask 'macvim-kaoriya-override' do
+  conflicts_with cask: 'macvim-kaoriya'
 
   if MacOS.version <= :lion
     version '7.4:20130911'
@@ -21,6 +21,7 @@ cask 'macvim-kaoriya' do
 
   mvim = "#{appdir}/MacVim.app/Contents/bin/mvim"
   executables = %w[macvim-askpass mvim mvimdiff mview mvimex gvim gvimdiff gview gvimex]
+  executables += %w[vi vim vimdiff view vimex] # overriding system Vim
   executables.each { |e| binary mvim, target: e }
 
   zap delete: [
@@ -39,11 +40,13 @@ cask 'macvim-kaoriya' do
       This cask installs symlinks in /usr/local/bin that target to the binary
       MacVim.app/Contents/MacOS/mvim. Below is the list.
         macvim-askpass / mvim / mvimdiff / mview / mvimex /
-        gvim / gvimdiff / gview / gvimex
+        gvim / gvimdiff / gview / gvimex /
+        vi / vim / vimdiff / view / vimex
 
-      If you want to override the system Vim, use `macvim-kaoriya-override`
-      cask instead. This was the `OVERRIDE_SYSTEM_VIM=1` option in the previous
-      build.
+      The last line means this cask overrides the system Vim. This was the
+      `OVERRIDE_SYSTEM_VIM=1` option in the previous build.
+
+      If you do not want to override, use the `macvim-kaoriya` cask instead.
     EOS
   end
 end
