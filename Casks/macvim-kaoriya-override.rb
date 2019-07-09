@@ -3,21 +3,14 @@
 cask 'macvim-kaoriya-override' do
   conflicts_with cask: 'macvim-kaoriya'
 
-  if MacOS.version <= :lion
-    version '7.4:20130911'
-    sha256 'd9fc6e38de1852e4ef79e9ea78afa60e606bf45066cff031e349d65748cbfbce'
-  else
-    version '8.0:20180324'
-    sha256 '1f02f5f23635d7e22b65366d45fb9794783e9fbd8b0118822c03879051517dae'
-  end
+  version '8.0:20180324'
+  sha256 '1f02f5f23635d7e22b65366d45fb9794783e9fbd8b0118822c03879051517dae'
 
   url "https://github.com/splhack/macvim-kaoriya/releases/download/#{version.after_colon}/MacVim-KaoriYa-#{version.after_colon}.dmg"
   appcast 'https://github.com/splhack/macvim-kaoriya/releases.atom',
           checkpoint: 'a912201811add06a14cc0568e3e77ca924f0297f4c930cd6a69284b278d87366'
   name 'MacVim KaoriYa'
   homepage 'https://github.com/splhack/macvim-kaoriya'
-
-  depends_on macos: '>= :lion'
 
   app 'MacVim.app'
 
