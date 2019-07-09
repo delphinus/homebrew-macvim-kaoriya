@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 cask 'macvim-kaoriya-override' do
   conflicts_with cask: 'macvim-kaoriya'
 
@@ -25,9 +27,9 @@ cask 'macvim-kaoriya-override' do
   executables.each { |e| binary mvim, target: e }
 
   zap delete: [
-                '~/Library/Preferences/org.vim.MacVim.LSSharedFileList.plist',
-                '~/Library/Preferences/org.vim.MacVim.plist',
-              ]
+    '~/Library/Preferences/org.vim.MacVim.LSSharedFileList.plist',
+    '~/Library/Preferences/org.vim.MacVim.plist'
+  ]
 
   caveats do
     files_in_usr_local
